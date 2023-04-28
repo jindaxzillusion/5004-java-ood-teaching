@@ -1,0 +1,21 @@
+Team created successfully with more than 10 players and less than 20 player.
+Player added: pop_! os
+Your Current Team Member:
+Preferred Position: GOALIE, FirstName: John, LastName: A., JerseyNumber: 1
+Preferred Position: DEFENDER, FirstName: Jane, LastName: C., JerseyNumber: 3
+Preferred Position: DEFENDER, FirstName: Mike, LastName: B., JerseyNumber: 2
+Preferred Position: MIDFIELDER, FirstName: Sarah, LastName: E., JerseyNumber: 5
+Preferred Position: MIDFIELDER, FirstName: Tom, LastName: F., JerseyNumber: 6
+Preferred Position: MIDFIELDER, FirstName: Emily, LastName: D., JerseyNumber: 4
+Preferred Position: FORWARD, FirstName: David, LastName: G., JerseyNumber: 7
+Preferred Position: MIDFIELDER, FirstName: linux, LastName: fedora, JerseyNumber: 8
+Preferred Position: MIDFIELDER, FirstName: arch, LastName: linux, JerseyNumber: 9
+Preferred Position: MIDFIELDER, FirstName: linux, LastName: mint, JerseyNumber: 10
+Your Starting Lineup:
+Position: GOALIE, FirstName: David, LastName: G., JerseyNumber: 7
+Position: DEFENDER, FirstName: Sarah, LastName: E., JerseyNumber: 5
+Position: DEFENDER, FirstName: Tom, LastName: F., JerseyNumber: 6
+Position: MIDFIELDER, FirstName: Mike, LastName: B., JerseyNumber: 2
+Position: MIDFIELDER, FirstName: Jane, LastName: C., JerseyNumber: 3
+Position: MIDFIELDER, FirstName: Emily, LastName: D., JerseyNumber: 4
+Position: FORWARD, FirstName: John, LastName: A., JerseyNumber: 1
