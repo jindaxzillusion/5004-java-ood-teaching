@@ -175,6 +175,7 @@ public class TicTacToeModel implements TicTacToe {
             row -> " " + Arrays.stream(row).map(
                 p -> p == null ? " " : p.toString()).collect(Collectors.joining(" | ")))
         .collect(Collectors.joining("\n-----------\n"));
+        
 //     This is the equivalent code as above, but using iteration, and still using
 //     the helpful built-in String.join method.
 //         List<String> rows = new ArrayList<>();

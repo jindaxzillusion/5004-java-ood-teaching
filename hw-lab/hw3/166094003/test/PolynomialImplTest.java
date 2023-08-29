@@ -4,32 +4,32 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import polynomial.Polynomial;
-import polynomial.PolynomialImpl;
+import polynomial.PolynomialImplSol;
 
 /**
  * These are the unit tests for the Polynomials.
  */
 public class PolynomialImplTest {
-  private PolynomialImpl p1;
-  private PolynomialImpl p2;
-  private PolynomialImpl p3;
-  private PolynomialImpl p4;
-  private PolynomialImpl p5;
-  private PolynomialImpl p6;
-  private PolynomialImpl p7;
+  private PolynomialImplSol p1;
+  private PolynomialImplSol p2;
+  private PolynomialImplSol p3;
+  private PolynomialImplSol p4;
+  private PolynomialImplSol p5;
+  private PolynomialImplSol p6;
+  private PolynomialImplSol p7;
 
   /**
    * Set up Polynomials to use for our tests.
    */
   @Before
   public void setUp() {
-    p1 = new PolynomialImpl("4x^3 +3x^1 -5");
-    p2 = new PolynomialImpl("-3x^4 -2x^5 -5 +11x^1");
-    p3 = new PolynomialImpl();
-    p4 = new PolynomialImpl("-3x^4 +3x^4 -6");
-    p5 = new PolynomialImpl("3");
-    p6 = new PolynomialImpl("");
-    p7 = new PolynomialImpl("2x^2");
+    p1 = new PolynomialImplSol("4x^3 +3x^1 -5");
+    p2 = new PolynomialImplSol("-3x^4 -2x^5 -5 +11x^1");
+    p3 = new PolynomialImplSol();
+    p4 = new PolynomialImplSol("-3x^4 +3x^4 -6");
+    p5 = new PolynomialImplSol("3");
+    p6 = new PolynomialImplSol("");
+    p7 = new PolynomialImplSol("2x^2");
   }
 
   @org.junit.Test public void testNoArgument() {
@@ -50,7 +50,7 @@ public class PolynomialImplTest {
 
   @org.junit.Test(expected = IllegalArgumentException.class)
   public void testInvalidString() {
-    Polynomial p8 = new PolynomialImpl("2x^-2");
+    Polynomial p8 = new PolynomialImplSol("2x^-2");
   }
 
   @org.junit.Test public void testAddSamePower() {
@@ -81,7 +81,7 @@ public class PolynomialImplTest {
 
   @org.junit.Test public void isSame() {
     assertFalse(p1.isSame(p2));
-    PolynomialImpl p3 = new PolynomialImpl("4x^3 +3x^1 -5");
+    PolynomialImplSol p3 = new PolynomialImplSol("4x^3 +3x^1 -5");
     assertTrue(p1.isSame(p3));
   }
 

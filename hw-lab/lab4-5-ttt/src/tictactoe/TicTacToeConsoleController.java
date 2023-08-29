@@ -32,6 +32,30 @@ public class TicTacToeConsoleController implements TicTacToeController {
     }
   }
 
+  private int getInput(Scanner sc, TicTacToe m) {
+    while (true) {
+      String input = sc.next();
+      if ("q".equalsIgnoreCase(input)) {
+        try {
+          this.out.append("Game quit! Ending game state:\n" + m.toString() + "\n");
+        } catch (IOException e) {
+          throw new IllegalStateException(e);
+        }
+        return -1; // Or any other value to indicate quitting the game.
+      }
+
+      if (!isNumeric(input)) {
+        try {
+          this.out.append("Not a valid number: " + input + "\n");
+        } catch (IOException e) {
+          throw new IllegalStateException(e);
+        }
+        continue;
+      }
+      return Integer.parseInt(input);
+    }
+  }
+
   @Override public void playGame(TicTacToe m) throws IllegalArgumentException {
     if (m == null) {
       throw new IllegalArgumentException("model is null");
@@ -49,51 +73,17 @@ public class TicTacToeConsoleController implements TicTacToeController {
       } catch (IOException e) {
         throw new IllegalStateException(e);
       }
-      int r = -1;
-      int c = -1;
-      while (true) {
-        String input = sc.next();
-        if ("q".equals(input) || "Q".equals(input)) {
-          try {
-            this.out.append("Game quit! Ending game state:\n" + m.toString() + "\n");
-          } catch (IOException e) {
-            throw new IllegalStateException(e);
-          }
-          return;
-        }
-        if (!isNumeric(input)) {
-          try {
-            this.out.append("Not a valid number: " + input + "\n");
-          } catch (IOException e) {
-            throw new IllegalStateException(e);
-          }
-          continue;
-        }
-        r = Integer.parseInt(input);
-        break;
+
+      int r = getInput(sc, m);
+      if (r == -1) {
+        return;
       }
 
-      while (true) {
-        String input = sc.next();
-        if ("q".equals(input) || "Q".equals(input)) {
-          try {
-            this.out.append("Game quit! Ending game state:\n" + m.toString() + "\n");
-          } catch (IOException e) {
-            throw new IllegalStateException(e);
-          }
-          return;
-        }
-        if (!isNumeric(input)) {
-          try {
-            this.out.append("Not a valid number: " + input + "\n");
-          } catch (IOException e) {
-            throw new IllegalStateException(e);
-          }
-          continue;
-        }
-        c = Integer.parseInt(input);
-        break;
+      int c = getInput(sc, m);
+      if (c == -1) {
+        return;
       }
+
       try {
         m.move(r - 1, c - 1);
         printMsg = true;

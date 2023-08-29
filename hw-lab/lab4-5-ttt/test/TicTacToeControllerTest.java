@@ -198,5 +198,4 @@ public class TicTacToeControllerTest {
     TicTacToeController c = new TicTacToeConsoleController(input, gameLog);
     c.playGame(m);
   }
-
 }

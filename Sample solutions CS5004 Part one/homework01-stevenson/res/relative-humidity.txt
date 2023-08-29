@@ -1,0 +1,27 @@
+Calculating Relative Humidity with Dew Point and Temperature
+(https://www.wikihow.com/Calculate-Humidity#Calculating-Relative-Humidity-with-Dew-Point-and-Temperature)
+
+1. Convert the air temperature and dew point temperature to Celsius
+
+	C = 5/9 * (F - 32)
+
+	T = 85F = 5/9(85-32) = 29.4C
+	T_d = 65F = 5/9(65-32) = 18.3C
+
+
+2. Calculate the saturated vapor pressure with a formula
+
+	e_s = 6.11 * 10((7.5 * T)/(237.3 + T))
+
+	e_s(T) = 6.11 * 10((7.5 * 29.4)/(237.3 + 29.4)) = 40.9
+
+3. Find the actual vapor pressure with the same formula
+
+	e_s(T_d) = 6.11 * 10((7.5 * 18.3)/(237.3 + 18.3)) = 21.0
+
+4. Calculate the relative humidity
+
+	rh = e_s(T_d) / e_s(T) * 100
+
+	rh = 21.0/41.9 * 100 = 51.3%
+

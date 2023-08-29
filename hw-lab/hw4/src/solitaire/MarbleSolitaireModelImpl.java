@@ -17,7 +17,7 @@ public class MarbleSolitaireModelImpl implements MarbleSolitaireModel {
    * Constructor, Create a default Marble Solitarie with armLength 3.
    */
   public MarbleSolitaireModelImpl() {
-    initBoard(3, 3, 3);
+    this(3,3,3);
   }
 
   /**
@@ -29,7 +29,7 @@ public class MarbleSolitaireModelImpl implements MarbleSolitaireModel {
    * @param armLength length of arm
    */
   public MarbleSolitaireModelImpl(int armLength) {
-    initBoard(armLength, (3 * armLength - 3) / 2, (3 * armLength - 3) / 2);
+    this(armLength, (3 * armLength - 3) / 2, (3 * armLength - 3) / 2);
   }
 
   /**
@@ -42,7 +42,7 @@ public class MarbleSolitaireModelImpl implements MarbleSolitaireModel {
    * @param emptyCol col of empty piece
    */
   public MarbleSolitaireModelImpl(int emptyRow, int emptyCol) {
-    initBoard(3, emptyRow, emptyCol);
+    this(3, emptyRow, emptyCol);
   }
 
   /**
@@ -71,12 +71,14 @@ public class MarbleSolitaireModelImpl implements MarbleSolitaireModel {
   private void initBoard(int armLength, int emptyRow, int emptyCol)
       throws IllegalArgumentException {
     this.boardSize = armLength * 3 - 2;
+
     if (armLength % 2 != 1 || armLength < 3) {
       throw new IllegalArgumentException("Arm length invalid");
     }
     if (isOutOfBounds(emptyRow, emptyCol, armLength)) {
       throw new IllegalArgumentException("Invalid empty point");
     }
+
     board = new String[boardSize][boardSize];
     for (int r = 0; r < boardSize; r++) {
       for (int c = 0; c < boardSize; c++) {
@@ -196,6 +198,7 @@ public class MarbleSolitaireModelImpl implements MarbleSolitaireModel {
    */
   @Override public String getGameState() {
     List<String> rows = new ArrayList<>();
+
     for (String[] row : board) {
       List<String> rowStrings = new ArrayList<>();
       for (String s : row) {
